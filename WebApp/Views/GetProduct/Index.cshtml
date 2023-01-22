@@ -1,0 +1,174 @@
+﻿@model IEnumerable<WebApp.Entities.ProductEntity>
+@*@model IEnumerable<WebApp.Factories.ProductFactory>*@
+@*@model IEnumerable<WebApp.Services.ProductService>*@
+
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="my-container">
+    <header>
+        <div class="logo">Fixxo.</div>
+        <nav class="navbar">
+            <a href="">Home</a>
+            <a href="">Categories</a>
+            <a href="">Products</a>
+            <a href="">Contacts</a>
+        </nav>
+        <div class="nav-symbols">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-repeat"></i>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+    </header>
+
+    <div class="top-info">
+        <div class="part-one">
+            <img src="images/img-2.svg" alt="">
+        </div>
+        <div class="part-two">
+            <p class="big-text">SALE UP <br>To 50% Off</p>
+            <p>Online shopping free home delivery over $100</p>
+            <button class="top-button">SHOP NOW</button>
+        </div>
+        <div class="part-three">
+            <img src="/images/img-1.svg" alt="" />
+        </div>
+    </div>
+
+    <section class="first-section">
+        <h1>Featured Product</h1>
+        <div class="items">
+
+            @foreach (var data in Model.Take(8))
+            {
+                <div class="item">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-repeat"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <button>QUICK VIEW</button>
+                    <div class="item-info">
+                        <p>@Html.DisplayFor(itemModel => data.Category.Name)</p>
+                        <p class="strong">@Html.DisplayFor(itemModel => data.Description)</p>
+                        <p>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </p>
+                        <p class="strong">@Html.DisplayFor(itemModel => data.Price)</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+
+    <section class="second-section">
+        <div class="first-item">
+            <img src="images/img-3.svg" alt="">
+            <div class="img-items">
+                <p>Pamela Reif's<br>Top Picks</p>
+                <button>SHOP NOW</button>
+            </div>
+        </div>
+        <div class="second-item">
+            <img src="images/img-4.svg" alt="">
+            <div class="img-items">
+                <p>Let's Be<br>Conscious</p>
+                <button>FLASE SALE</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="third-section">
+
+        <div class="sale-items">
+            <div class="big-sale">
+                <p>2 FOR USD $29</p>
+                <button>FLEASE SALE</button>
+            </div>
+        </div>
+        <div class="minor-cards">
+
+            @foreach (var data in Model.Take(4))
+            {
+                <div class="sale-items">
+                    <div class="small-sales"></div>
+                    <p>@Html.DisplayFor(itemModel => data.Category.Name)</p>
+                    <p class="big-size">@Html.DisplayFor(itemModel => data.Description)</p>
+                    <p>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </p>
+                    <p class="big-size">@Html.DisplayFor(itemModel => data.Price)</p>
+                </div>
+            }
+        </div>
+    </section>
+
+    <section class="third-section-two">
+        <div class="minor-cards">
+
+            @foreach (var data in Model.Take(4))
+            {
+                <div class="sale-items">
+                    <div class="small-sales"></div>
+                    <p>@Html.DisplayFor(itemModel => data.Category.Name)</p>
+                    <p class="big-size">@Html.DisplayFor(itemModel => data.Description)</p>
+                    <p>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </p>
+                    <p class="big-size">@Html.DisplayFor(itemModel => data.Price)</p>
+                </div>
+            }
+        </div>
+        <div class="sale-items">
+            <div class="big-sale">
+                <p>2 FOR USD $29</p>
+                <button>FLEASE SALE</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="fourth-section">
+        <div class="support">
+            <img src="images/customer-service.svg" alt="">
+            <p class="strong-text">Customer Support</p>
+            <p>Village did removed enoyed<br>explain talking.</p>
+        </div>
+        <div class="support">
+            <img src="images/credit-card.svg" alt="">
+            <p class="strong-text">Secured Payment</p>
+            <p>Village did removed enoyed<br>explain talking.</p>
+        </div>
+        <div class="support">
+            <img src="images/delivery-truck.svg" alt="">
+            <p class="strong-text">Free Home Delivery</p>
+            <p>Village did removed enoyed<br>explain talking.</p>
+        </div>
+        <div class="support">
+            <img src="images/delivery-truck.svg" alt="">
+            <p class="strong-text">30 Day Reuters</p>
+            <p>Village did removed enoyed<br>explain talking.</p>
+        </div>
+    </section>
+
+    <footer>
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-google"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <p><i class="fa-regular fa-copyright"></i>2020 FIXXO. All Rights Reserved</p>
+    </footer>
+</div>
